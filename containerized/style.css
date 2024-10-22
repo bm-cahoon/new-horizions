@@ -1,0 +1,89 @@
+/* Body styling */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.6;
+}
+
+/* Container setup for sidebar and content */
+.container {
+    display: flex;
+    margin: 20px;
+    justify-content: space-between; /* Aligns content properly */
+}
+
+/* Sidebar styling */
+#sidebar {
+    width: 20%;
+    background-color: #f4f4f4;
+    padding: 20px;
+    height: 100vh;
+    position: fixed;
+    overflow-y: auto;
+}
+
+#sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+#sidebar ul li {
+    margin-bottom: 10px;
+}
+
+#sidebar ul li a {
+    text-decoration: none;
+    color: #007BFF;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#sidebar ul li a:hover {
+    color: #0056b3;
+}
+
+/* Main content area styling */
+#content {
+    margin-left: 25%; /* Ensures content is pushed to the right of the sidebar */
+    width: 70%;
+    text-align: left; /* Change this to left-align the text */
+}
+
+/* Hide all sections initially */
+.content-section {
+    display: none;
+}
+
+/* Show active content section */
+.content-section.active {
+    display: block;
+}
+
+/* Paragraph styling to indent the first line */
+p {
+    text-indent: 0; /* Prevent paragraph indentation */
+    margin-bottom: 20px; /* Add spacing between paragraphs */
+    line-height: 1.8; /* Adjust line height for better readability */
+}
+
+/* Title styling to center titles */
+h2 {
+    margin-bottom: 20px; /* Add space below the titles */
+}
+
+/* Footer styling */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Adjust the footer so it doesn’t overlap the content */
+#content {
+    padding-bottom: 60px; /* Add padding to prevent overlap with footer */
+}
