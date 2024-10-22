@@ -26,6 +26,7 @@ body {
     padding: 20px;
     height: 100vh;
     position: fixed;
+    overflow-y: auto; /* Ensure the sidebar is scrollable */
 }
 
 #sidebar ul {
@@ -54,12 +55,20 @@ body {
     width: 70%;
 }
 
+/* Hide all sections initially */
 .content-section {
     display: none;
 }
 
+/* Show active content section */
 .content-section.active {
     display: block;
+}
+
+/* Paragraph styling to indent the first line */
+p {
+    text-indent: 2em; /* Indent first line of each paragraph */
+    margin-bottom: 15px; /* Add spacing between paragraphs */
 }
 
 /* Footer styling */
@@ -71,4 +80,9 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
+}
+
+/* Adjust the footer so it doesn’t overlap the content */
+#content {
+    padding-bottom: 60px; /* Add padding to prevent overlap with footer */
 }
