@@ -1,3 +1,10 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 /* Body styling */
 body {
     font-family: Arial, sans-serif;
@@ -60,9 +67,8 @@ body {
     display: block;
 }
 
-/* Paragraph styling to indent the first line */
+/* Paragraph styling with no indentation */
 p {
-    text-indent: 2em; /* Indent first line of each paragraph */
     margin-bottom: 20px; /* Add spacing between paragraphs */
     line-height: 1.8; /* Adjust line height for better readability */
 }
