@@ -24,21 +24,21 @@ header {
     display: flex;
     justify-content: space-between;
     padding: 20px;
-    gap: 20px;
+    gap: 10px; /* Reduce the gap between sidebar and content */
     flex: 1;
 }
 
 /* Sidebar styling */
 #sidebar {
-    width: 20%;
+    width: 18%; /* Slightly reduce the sidebar width */
     background: linear-gradient(135deg, #007BFF, #0056b3);
-    padding: 20px;
-    height: calc(100vh - 80px); /* Adjust height to respect the header */
+    padding: 15px; /* Reduce padding */
+    height: calc(100vh - 80px);
     position: relative;
     color: white;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
     overflow-y: auto;
-    margin-top: 80px; /* Make sure it starts below the header */
+    margin-top: 80px;
 }
 
 #sidebar ul {
@@ -48,7 +48,7 @@ header {
 }
 
 #sidebar ul li {
-    margin-bottom: 15px;
+    margin-bottom: 10px; /* Reduce the spacing between the list items */
 }
 
 #sidebar ul li a {
@@ -56,7 +56,7 @@ header {
     color: white;
     font-weight: bold;
     display: block;
-    padding: 10px;
+    padding: 8px; /* Reduce padding for a tighter look */
     border-radius: 5px;
     transition: background-color 0.3s ease;
 }
@@ -67,9 +67,9 @@ header {
 
 /* Main content area styling */
 #content {
-    margin-left: 25%;
-    width: 70%;
-    padding: 40px;
+    margin-left: 22%; /* Adjust the main content margin to match the reduced sidebar width */
+    width: 74%; /* Slightly increase content width */
+    padding: 30px; /* Reduce padding inside the content area */
     background: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
     border-radius: 10px;
@@ -83,7 +83,7 @@ header {
 /* Title styling */
 h2 {
     font-size: 2.2rem;
-    margin-bottom: 20px;
+    margin-bottom: 15px; /* Reduce margin below titles */
     color: #007BFF;
     text-align: left;
     position: relative;
@@ -103,7 +103,7 @@ h2:after {
 /* Paragraph styling */
 p {
     text-indent: 0;
-    margin-bottom: 20px;
+    margin-bottom: 15px; /* Reduce space between paragraphs */
     line-height: 1.8;
     color: #555;
 }
