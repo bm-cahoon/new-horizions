@@ -1,75 +1,103 @@
 /* Body styling */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif; /* Use a modern web font */
     display: flex;
     flex-direction: column;
-    line-height: 1.6;
+    background-color: #f0f2f5; /* Light background for better contrast */
+    color: #333;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
 }
 
 /* Container setup for sidebar and content */
 .container {
     display: flex;
-    margin: 20px;
-    justify-content: space-between; /* Aligns content properly */
+    justify-content: space-between;
+    padding: 20px;
+    gap: 20px;
+    flex: 1;
 }
 
 /* Sidebar styling */
 #sidebar {
     width: 20%;
-    background-color: #f4f4f4;
+    background: linear-gradient(135deg, #007BFF, #0056b3); /* Gradient background for sidebar */
     padding: 20px;
     height: 100vh;
     position: fixed;
+    top: 0;
+    left: 0;
+    color: white;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
     overflow-y: auto;
 }
 
 #sidebar ul {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 #sidebar ul li {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 #sidebar ul li a {
     text-decoration: none;
-    color: #007BFF;
+    color: white;
     font-weight: bold;
-    cursor: pointer;
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
 #sidebar ul li a:hover {
-    color: #0056b3;
+    background-color: rgba(255, 255, 255, 0.2); /* Subtle hover effect */
 }
 
 /* Main content area styling */
 #content {
-    margin-left: 25%; /* Ensures content is pushed to the right of the sidebar */
+    margin-left: 25%;
     width: 70%;
-    text-align: left; /* Change this to left-align the text */
+    padding: 40px;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Card-like shadow */
+    border-radius: 10px;
+    transition: transform 0.3s ease;
 }
 
-/* Hide all sections initially */
-.content-section {
-    display: none;
+#content:hover {
+    transform: translateY(-10px); /* Subtle hover effect for content */
 }
 
-/* Show active content section */
-.content-section.active {
-    display: block;
-}
-
-/* Paragraph styling to indent the first line */
-p {
-    text-indent: 0; /* Prevent paragraph indentation */
-    margin-bottom: 20px; /* Add spacing between paragraphs */
-    line-height: 1.8; /* Adjust line height for better readability */
-}
-
-/* Title styling to center titles */
+/* Title styling */
 h2 {
-    margin-bottom: 20px; /* Add space below the titles */
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    color: #007BFF;
+    text-align: left;
+    position: relative;
+}
+
+h2:after {
+    content: '';
+    width: 50px;
+    height: 4px;
+    background-color: #007BFF;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    border-radius: 2px;
+}
+
+/* Paragraph styling */
+p {
+    text-indent: 0;
+    margin-bottom: 20px;
+    line-height: 1.8;
+    color: #555; /* Subtle color for readability */
 }
 
 /* Footer styling */
@@ -85,5 +113,31 @@ footer {
 
 /* Adjust the footer so it doesn’t overlap the content */
 #content {
-    padding-bottom: 60px; /* Add padding to prevent overlap with footer */
+    padding-bottom: 60px;
+}
+
+/* Hide all sections initially */
+.content-section {
+    display: none;
+}
+
+/* Show active content section */
+.content-section.active {
+    display: block;
+    animation: fadeIn 0.5s ease; /* Animation for smooth transitions */
+}
+
+/* Keyframes for fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Adding smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
 }
