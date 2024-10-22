@@ -30,16 +30,19 @@ header {
 
 /* Sidebar styling */
 #sidebar {
-    width: 17%; /* Slightly reduced sidebar width */
+    width: 17%; /* Sidebar width */
     background: linear-gradient(135deg, #007BFF, #0056b3);
-    padding: 12px; /* Reduced padding inside the sidebar */
+    padding: 12px;
     height: calc(100vh - 70px); /* Adjusted to match the header */
     position: relative;
     color: white;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
     overflow-y: auto;
-    margin-top: 70px; /* Sidebar starts below the header */
+    margin-top: 70px;
+    border-radius: 10px; /* Adds rounded corners to the sidebar */
+    margin-left: 10px; /* Aligns the sidebar better with the content */
 }
+
 
 #sidebar ul {
     list-style: none;
@@ -68,7 +71,7 @@ header {
 /* Main content area styling */
 #content {
     margin-left: 10%; /* Slightly closer to the sidebar */
-    width: 75%; /* Slightly increased content width */
+    width: 65%; /* Slightly increased content width */
     padding: 15px; /* Reduced padding inside the content */
     background: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
