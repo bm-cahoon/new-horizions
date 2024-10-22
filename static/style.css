@@ -47,7 +47,7 @@ body {
 #content {
     margin-left: 25%; /* Ensures content is pushed to the right of the sidebar */
     width: 70%;
-    text-align: center; /* Center-align text inside the content */
+    text-align: left; /* Change this to left-align the text */
 }
 
 /* Hide all sections initially */
@@ -62,6 +62,7 @@ body {
 
 /* Paragraph styling to indent the first line */
 p {
+    text-indent: 0; /* Prevent paragraph indentation */
     margin-bottom: 20px; /* Add spacing between paragraphs */
     line-height: 1.8; /* Adjust line height for better readability */
 }
