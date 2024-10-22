@@ -1,75 +1,111 @@
 /* Body styling */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     display: flex;
     flex-direction: column;
-    line-height: 1.6;
+    background-color: #f0f2f5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+/* Header styling */
+header {
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add a shadow for separation */
+    z-index: 1;
+    position: relative;
 }
 
 /* Container setup for sidebar and content */
 .container {
     display: flex;
-    margin: 20px;
-    justify-content: space-between; /* Aligns content properly */
+    justify-content: space-between;
+    padding: 20px;
+    gap: 20px;
+    flex: 1;
 }
 
 /* Sidebar styling */
 #sidebar {
     width: 20%;
-    background-color: #f4f4f4;
+    background: linear-gradient(135deg, #007BFF, #0056b3);
     padding: 20px;
-    height: 100vh;
-    position: fixed;
+    height: calc(100vh - 80px); /* Adjust height to respect the header */
+    position: relative;
+    color: white;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
     overflow-y: auto;
+    margin-top: 80px; /* Make sure it starts below the header */
 }
 
 #sidebar ul {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 #sidebar ul li {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 #sidebar ul li a {
     text-decoration: none;
-    color: #007BFF;
+    color: white;
     font-weight: bold;
-    cursor: pointer;
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
 #sidebar ul li a:hover {
-    color: #0056b3;
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 /* Main content area styling */
 #content {
-    margin-left: 25%; /* Ensures content is pushed to the right of the sidebar */
+    margin-left: 25%;
     width: 70%;
-    text-align: left; /* Change this to left-align the text */
+    padding: 40px;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    transition: transform 0.3s ease;
 }
 
-/* Hide all sections initially */
-.content-section {
-    display: none;
+#content:hover {
+    transform: translateY(-10px);
 }
 
-/* Show active content section */
-.content-section.active {
-    display: block;
-}
-
-/* Paragraph styling to indent the first line */
-p {
-    text-indent: 0; /* Prevent paragraph indentation */
-    margin-bottom: 20px; /* Add spacing between paragraphs */
-    line-height: 1.8; /* Adjust line height for better readability */
-}
-
-/* Title styling to center titles */
+/* Title styling */
 h2 {
-    margin-bottom: 20px; /* Add space below the titles */
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    color: #007BFF;
+    text-align: left;
+    position: relative;
+}
+
+h2:after {
+    content: '';
+    width: 50px;
+    height: 4px;
+    background-color: #007BFF;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    border-radius: 2px;
+}
+
+/* Paragraph styling */
+p {
+    text-indent: 0;
+    margin-bottom: 20px;
+    line-height: 1.8;
+    color: #555;
 }
 
 /* Footer styling */
@@ -85,5 +121,31 @@ footer {
 
 /* Adjust the footer so it doesn’t overlap the content */
 #content {
-    padding-bottom: 60px; /* Add padding to prevent overlap with footer */
+    padding-bottom: 60px;
+}
+
+/* Hide all sections initially */
+.content-section {
+    display: none;
+}
+
+/* Show active content section */
+.content-section.active {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+/* Keyframes for fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Adding smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
 }
