@@ -70,7 +70,7 @@ header {
 #content {
     width: 80%; /* Make content fill the rest of the space */
     margin: 0; /* Remove extra margins */
-    padding: 25px;
+    padding: 15px;
     background: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
     border-radius: 10px;
