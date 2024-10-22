@@ -72,6 +72,12 @@ p {
     line-height: 1.8; /* Adjust line height for better readability */
 }
 
+/* Title styling to center titles */
+h2 {
+    text-align: center; /* Center all <h2> titles */
+    margin-bottom: 20px; /* Add space below the titles */
+}
+
 /* Footer styling */
 footer {
     text-align: center;
