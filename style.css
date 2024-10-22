@@ -1,13 +1,22 @@
 /* Body styling */
 body {
-    font-family: 'Poppins', sans-serif; /* Use a modern web font */
+    font-family: 'Poppins', sans-serif;
     display: flex;
     flex-direction: column;
-    background-color: #f0f2f5; /* Light background for better contrast */
+    background-color: #f0f2f5;
     color: #333;
     margin: 0;
     padding: 0;
     min-height: 100vh;
+}
+
+/* Header styling */
+header {
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add a shadow for separation */
+    z-index: 1;
+    position: relative;
 }
 
 /* Container setup for sidebar and content */
@@ -22,15 +31,14 @@ body {
 /* Sidebar styling */
 #sidebar {
     width: 20%;
-    background: linear-gradient(135deg, #007BFF, #0056b3); /* Gradient background for sidebar */
+    background: linear-gradient(135deg, #007BFF, #0056b3);
     padding: 20px;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
+    height: calc(100vh - 80px); /* Adjust height to respect the header */
+    position: relative;
     color: white;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
     overflow-y: auto;
+    margin-top: 80px; /* Make sure it starts below the header */
 }
 
 #sidebar ul {
@@ -54,7 +62,7 @@ body {
 }
 
 #sidebar ul li a:hover {
-    background-color: rgba(255, 255, 255, 0.2); /* Subtle hover effect */
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 /* Main content area styling */
@@ -63,13 +71,13 @@ body {
     width: 70%;
     padding: 40px;
     background: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Card-like shadow */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
     border-radius: 10px;
     transition: transform 0.3s ease;
 }
 
 #content:hover {
-    transform: translateY(-10px); /* Subtle hover effect for content */
+    transform: translateY(-10px);
 }
 
 /* Title styling */
@@ -97,7 +105,7 @@ p {
     text-indent: 0;
     margin-bottom: 20px;
     line-height: 1.8;
-    color: #555; /* Subtle color for readability */
+    color: #555;
 }
 
 /* Footer styling */
@@ -124,7 +132,7 @@ footer {
 /* Show active content section */
 .content-section.active {
     display: block;
-    animation: fadeIn 0.5s ease; /* Animation for smooth transitions */
+    animation: fadeIn 0.5s ease;
 }
 
 /* Keyframes for fade-in animation */
@@ -141,4 +149,3 @@ footer {
 html {
     scroll-behavior: smooth;
 }
-
