@@ -1,25 +1,5 @@
-# Step 1: Use Node.js for the backend
-FROM node:14 AS node-backend
-
-WORKDIR /app
-COPY package*.json ./
-RUN npm install
-COPY server.js ./
-
-# Accept the OpenAI API key as a build argument
-ARG OPENAI_API_KEY
-
-# Step 2: Build a simple backend server that handles API calls
-CMD ["node", "server.js"]
-
-# Step 3: Use Nginx for serving static files
+# Use an official Nginx image as the base image
 FROM nginx:alpine
-
-# Remove the default Nginx configuration file
-RUN rm /etc/nginx/conf.d/default.conf
-
-# Copy your custom Nginx configuration file
-COPY nginx.conf /etc/nginx/conf.d/
 
 # Remove the default Nginx configuration file
 RUN rm /usr/share/nginx/html/*
@@ -28,9 +8,6 @@ RUN rm /usr/share/nginx/html/*
 COPY index.html /usr/share/nginx/html/
 COPY style.css /usr/share/nginx/html/
 COPY script.js /usr/share/nginx/html/
-
-# You can set environment variables if needed
-ENV OPENAI_API_KEY=$OPENAI_API_KEY
 
 # Expose port 80 to the outside world
 EXPOSE 80
