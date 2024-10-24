@@ -1,0 +1,14 @@
+version: '3'
+services:
+  backend:
+    build: .
+    environment:
+      - OPENAI_API_KEY=your_openai_api_key_here
+    ports:
+      - "3000:3000"
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"

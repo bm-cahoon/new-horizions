@@ -28,3 +28,22 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('vision').style.display = 'block';
     document.getElementById('vision').classList.add('active');
 });
+
+document.getElementById('ai-assist-sidebar').addEventListener('click', function (e) {
+    e.preventDefault();
+
+    const userQuery = prompt("What type of certification are you looking for?");
+
+    if (userQuery) {
+        fetch(`/api/certification?q=${userQuery}`)
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('ai-response').innerText = 'Suggested Certifications: ' + data.suggestions;
+            })
+            .catch(error => {
+                document.getElementById('ai-response').innerText = 'Error: ' + error.message;
+            });
+    }
+});
+
+
