@@ -9,3 +9,4 @@ node_modules/
 
 # Ignore local environment files
 .env
+.env chatgpt-backend

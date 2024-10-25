@@ -1,61 +1,60 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Get all the links in the sidebar
+    const sections = document.querySelectorAll('.content-section');
     const links = document.querySelectorAll('#sidebar ul li a');
 
-    // Loop over each link and add a click event listener
+    // Hide all sections except the first one
+    sections.forEach((section, index) => {
+        if (index === 0) {
+            section.style.display = 'block';
+            section.classList.add('active');
+        } else {
+            section.style.display = 'none';
+        }
+    });
+
+    // Add event listeners to sidebar links
     links.forEach(link => {
         link.addEventListener('click', function (e) {
             e.preventDefault();
 
-            // Hide all sections
-            document.querySelectorAll('.content-section').forEach(section => {
-                section.style.display = 'none';
-            });
-
-            // Remove the 'active' class from all sections
-            document.querySelectorAll('.content-section').forEach(section => {
-                section.classList.remove('active');
-            });
-
-            // Show the selected section and add the 'active' class
             const target = this.getAttribute('data-target');
-            document.getElementById(target).style.display = 'block';
-            document.getElementById(target).classList.add('active');
+            sections.forEach(section => {
+                if (section.id === target) {
+                    section.style.display = 'block';
+                    section.classList.add('active');
+                } else {
+                    section.style.display = 'none';
+                    section.classList.remove('active');
+                }
+            });
+
+            // Handle AI Assistant pop-up
+            if (target === 'chat') {
+                startChat();
+            }
         });
     });
 
-    // Set default active section (optional)
-    document.getElementById('vision').style.display = 'block';
-    document.getElementById('vision').classList.add('active');
-});
+    function startChat() {
+        const userMessage = prompt("What certification are you interested in?");
+        if (userMessage) {
+            sendMessageToChatGPT(userMessage);
+        }
+    }
 
-document.addEventListener('DOMContentLoaded', () => {
-    const chatForm = document.getElementById('chat-form');
-    const chatBox = document.getElementById('chat-box');
-    const userInput = document.getElementById('user-input');
-
-    chatForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-
-        const userMessage = userInput.value;
-        addMessage('You', userMessage);
-        userInput.value = '';
-
-        const response = await fetch('http://localhost:5000/chat', {
+    function sendMessageToChatGPT(message) {
+        fetch('http://localhost:5000/chat', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ message: userMessage }),
+            body: JSON.stringify({ message }),
+        })
+        .then(response => response.json())
+        .then(data => {
+            alert(`ChatGPT: ${data.reply}`);
+        })
+        .catch(error => {
+            console.error('Error communicating with ChatGPT:', error);
+            alert('Error communicating with ChatGPT');
         });
-
-        const data = await response.json();
-        addMessage('ChatGPT', data.reply);
-    });
-
-    function addMessage(sender, text) {
-        const messageElement = document.createElement('p');
-        messageElement.classList.add(sender.toLowerCase());
-        messageElement.textContent = `${sender}: ${text}`;
-        chatBox.appendChild(messageElement);
-        chatBox.scrollTop = chatBox.scrollHeight;
     }
 });

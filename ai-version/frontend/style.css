@@ -1,4 +1,4 @@
-/* Body styling */
+/* Body Styling */
 body {
     font-family: 'Poppins', sans-serif;
     display: flex;
@@ -10,39 +10,37 @@ body {
     min-height: 100vh;
 }
 
-/* Header styling */
+/* Header Styling */
 header {
-    padding: 15px; /* Reduced padding for a more compact header */
+    padding: 15px;
     background-color: #fff;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     z-index: 1;
     position: relative;
 }
 
-/* Container setup for sidebar and content */
+/* Container for Sidebar and Content */
 .container {
     display: flex;
     justify-content: space-between;
-    padding: 20px 10px; /* Reduced padding between elements */
-    gap: 5px; /* Reduced the gap between sidebar and content */
+    padding: 20px 10px;
+    gap: 5px;
     flex: 1;
 }
 
-/* Sidebar styling */
+/* Sidebar Styling */
 #sidebar {
-    width: 17%; /* Sidebar width */
+    width: 17%;
     background: linear-gradient(135deg, #007BFF, #0056b3);
     padding: 12px;
-    height: calc(100vh - 70px); /* Adjusted to match the header */
-    position: relative;
+    height: calc(100vh - 70px);
     color: white;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
     overflow-y: auto;
     margin-top: 5px;
-    border-radius: 10px; /* Adds rounded corners to the sidebar */
-    margin-left: 10px; /* Aligns the sidebar better with the content */
+    border-radius: 10px;
+    margin-left: 10px;
 }
-
 
 #sidebar ul {
     list-style: none;
@@ -51,7 +49,7 @@ header {
 }
 
 #sidebar ul li {
-    margin-bottom: 8px; /* Reduced margin between list items */
+    margin-bottom: 8px;
 }
 
 #sidebar ul li a {
@@ -68,11 +66,11 @@ header {
     background-color: rgba(255, 255, 255, 0.2);
 }
 
-/* Main content area styling */
+/* Main Content Styling */
 #content {
-    margin-left: 5%; /* Slightly closer to the sidebar */
-    width: 75%; /* Slightly increased content width */
-    padding: 15px; /* Reduced padding inside the content */
+    margin-left: 5%;
+    width: 75%;
+    padding: 15px;
     background: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
     border-radius: 10px;
@@ -83,9 +81,9 @@ header {
     transform: translateY(-10px);
 }
 
-/* Title styling */
+/* Title Styling */
 h2 {
-    font-size: 2rem; /* Reduced the font size for a more compact title */
+    font-size: 2rem;
     margin-bottom: 15px;
     color: #007BFF;
     text-align: left;
@@ -94,8 +92,8 @@ h2 {
 
 h2:after {
     content: '';
-    width: 40px; /* Reduced underline width */
-    height: 3px; /* Reduced underline thickness */
+    width: 40px;
+    height: 3px;
     background-color: #007BFF;
     position: absolute;
     left: 0;
@@ -103,18 +101,17 @@ h2:after {
     border-radius: 2px;
 }
 
-/* Paragraph styling */
+/* Paragraph Styling */
 p {
-    text-indent: 0;
-    margin-bottom: 10px; /* Reduced space between paragraphs */
-    line-height: 1.7; /* Slightly tighter line height */
+    margin-bottom: 10px;
+    line-height: 1.7;
     color: #555;
 }
 
-/* Footer styling */
+/* Footer Styling */
 footer {
     text-align: center;
-    padding: 15px; /* Reduced padding for a more compact footer */
+    padding: 15px;
     background-color: #333;
     color: white;
     position: fixed;
@@ -122,23 +119,17 @@ footer {
     width: 100%;
 }
 
-/* Adjust the footer so it doesn’t overlap the content */
-#content {
-    padding-bottom: 50px;
-}
-
-/* Hide all sections initially */
+/* Content Sections */
 .content-section {
     display: none;
 }
 
-/* Show active content section */
 .content-section.active {
     display: block;
     animation: fadeIn 0.5s ease;
 }
 
-/* Keyframes for fade-in animation */
+/* Fade-in Animation */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -148,22 +139,16 @@ footer {
     }
 }
 
-/* Modern Styling for "How it Works" Section */
-#how-it-works {
+/* Modern Styling for Sections */
+section {
     padding: 30px;
     background-color: #f9f9f9;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
 }
 
-#how-it-works h2 {
-    font-size: 2.5rem;
-    color: #007BFF;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.step {
+.step, .donation-method, .vision-paragraph, .about-paragraph, .donation-purpose {
     margin-bottom: 25px;
     padding: 20px;
     background-color: white;
@@ -171,397 +156,35 @@ footer {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
 }
 
-.step h3 {
-    font-size: 1.8rem;
-    color: #0056b3;
-    margin-bottom: 10px;
-}
-
-.step p {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #333;
-    margin-bottom: 0;
-}
-
-/* Add some responsive styles */
-@media (max-width: 768px) {
-    #how-it-works {
-        padding: 20px;
-    }
-    .step {
-        padding: 15px;
-    }
-    #how-it-works h2 {
-        font-size: 2rem;
-    }
-    .step h3 {
-        font-size: 1.5rem;
-    }
-    .step p {
-        font-size: 0.9rem;
-    }
-}
-
-/* Modern Styling for "How to Donate" Section */
-#donate {
-    padding: 30px;
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-}
-
-#donate h2 {
-    font-size: 2.5rem;
-    color: #007BFF;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.donation-method {
-    margin-bottom: 25px;
-    padding: 20px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-}
-
-.donation-method h3 {
-    font-size: 1.8rem;
-    color: #0056b3;
-    margin-bottom: 10px;
-}
-
-.donation-method p {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #333;
-    margin-bottom: 0;
-}
-
-/* Add some responsive styles */
-@media (max-width: 768px) {
-    #donate {
-        padding: 20px;
-    }
-    .donation-method {
-        padding: 15px;
-    }
-    #donate h2 {
-        font-size: 2rem;
-    }
-    .donation-method h3 {
-        font-size: 1.5rem;
-    }
-    .donation-method p {
-        font-size: 0.9rem;
-    }
-}
-
-/* Modern Styling for Vision Statement Section */
-#vision {
-    padding: 30px;
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-}
-
-#vision h2 {
-    font-size: 2.5rem;
-    color: #007BFF;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.vision-paragraph {
-    margin-bottom: 25px;
-    padding: 20px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-}
-
-.vision-paragraph p {
-    font-size: 1rem;
-    line-height: 1.7;
+.step h3, .donation-method h3, .vision-paragraph p, .about-paragraph p {
+    font-size: 1.2rem;
     color: #333;
 }
 
-/* Responsive Design for Smaller Screens */
-@media (max-width: 768px) {
-    #vision {
-        padding: 20px;
-    }
-    .vision-paragraph {
-        padding: 15px;
-    }
-    #vision h2 {
-        font-size: 2rem;
-    }
-    .vision-paragraph p {
-        font-size: 0.9rem;
-    }
-}
-
-/* Modern Styling for About Section */
-#about {
-    padding: 30px;
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-}
-
-#about h2 {
-    font-size: 2.5rem;
-    color: #007BFF;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.about-paragraph {
-    margin-bottom: 25px;
-    padding: 20px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-}
-
-.about-paragraph p {
-    font-size: 1rem;
-    line-height: 1.7;
-    color: #333;
-}
-
-/* Responsive Design for Smaller Screens */
-@media (max-width: 768px) {
-    #about {
-        padding: 20px;
-    }
-    .about-paragraph {
-        padding: 15px;
-    }
-    #about h2 {
-        font-size: 2rem;
-    }
-    .about-paragraph p {
-        font-size: 0.9rem;
-    }
-}
-
-/* Modern Styling for Where Donations Go Section */
-#where-donations-go {
-    padding: 30px;
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-}
-
-#where-donations-go h2 {
-    font-size: 2.5rem;
-    color: #007BFF;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.donation-purpose {
-    margin-bottom: 25px;
-    padding: 20px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-}
-
-.donation-purpose p {
-    font-size: 1rem;
-    line-height: 1.7;
-    color: #333;
-}
-
-/* Responsive Design for Smaller Screens */
-@media (max-width: 768px) {
-    #where-donations-go {
-        padding: 20px;
-    }
-    .donation-purpose {
-        padding: 15px;
-    }
-    #where-donations-go h2 {
-        font-size: 2rem;
-    }
-    .donation-purpose p {
-        font-size: 0.9rem;
-    }
-}
-
-/* Modern Styling for List of Certifications Section */
-#certifications {
-    padding: 30px;
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-}
-
-#certifications h2 {
-    font-size: 2.5rem;
-    color: #007BFF;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.certification-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-}
-
-.certification-item {
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-    padding: 20px;
-    text-align: center;
-    width: 200px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.certification-item h3 {
-    font-size: 1.5rem;
-    color: #0056b3;
-    margin-bottom: 0;
-}
-
-.certification-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-}
-
-/* Responsive Design for Smaller Screens */
-@media (max-width: 768px) {
-    #certifications {
-        padding: 20px;
-    }
-    .certification-item {
-        padding: 15px;
-        width: 100%;
-    }
-    #certifications h2 {
-        font-size: 2rem;
-    }
-    .certification-item h3 {
-        font-size: 1.3rem;
-    }
-}
-
-/* Header Styling */
-.site-header {
-    text-align: center;
-    padding: 50px;
-    background: linear-gradient(135deg, #007BFF, #00BFFF); /* Gradient background */
-    color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    position: relative;
-    overflow: hidden;
-}
-
-/* Title Styling */
-.site-header h1 {
-    font-size: 3.5rem;
-    color: white;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 700;
-    text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Subtle text shadow */
-    letter-spacing: 2px;
-    margin: 0;
-    position: relative;
-    z-index: 2;
-}
-
-/* Tagline Styling */
-.site-header p {
-    font-size: 1.5rem;
-    font-style: italic;
-    color: #f0f2f5;
-    margin-top: 10px;
-    letter-spacing: 1px;
-    z-index: 2;
-    position: relative;
-}
-
-/* Background Decoration */
-.site-header:before {
-    content: '';
-    position: absolute;
-    top: -50px;
-    right: -50px;
-    background: rgba(255, 255, 255, 0.2);
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    z-index: 1;
-    animation: spin 10s linear infinite; /* Add some movement */
-}
-
-.site-header:after {
-    content: '';
-    position: absolute;
-    bottom: -50px;
-    left: -50px;
-    background: rgba(255, 255, 255, 0.2);
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    z-index: 1;
-    animation: spin-reverse 8s linear infinite; /* Add reverse movement */
-}
-
-/* Spin Animations */
-@keyframes spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-}
-
-@keyframes spin-reverse {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(-360deg); }
-}
-
-/* Adding smooth scroll behavior */
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #f4f4f9;
-}
-
+/* Chat Assistant Styling */
 .chat-container {
-    width: 300px;
-    background: white;
+    width: 100%;
+    max-width: 600px;
+    background-color: white;
     padding: 20px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
+    margin: 0 auto;
 }
 
 #chat-box {
-    height: 300px;
+    height: 400px;
     overflow-y: auto;
     border: 1px solid #ddd;
     padding: 10px;
     margin-bottom: 10px;
     background: #f9f9f9;
+    border-radius: 8px;
 }
 
 #chat-box p {
     margin: 0;
-    padding: 5px;
+    padding: 10px;
     border-radius: 4px;
 }
 
@@ -579,18 +202,56 @@ body {
 #chat-form {
     display: flex;
     gap: 10px;
+    align-items: center;
 }
 
 #chat-form input {
     flex: 1;
-    padding: 8px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
 }
 
 #chat-form button {
-    padding: 8px 12px;
+    padding: 10px 20px;
     background-color: #007BFF;
     color: white;
     border: none;
     cursor: pointer;
-    border-radius: 4px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#chat-form button:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    #content {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    #sidebar {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .step, .donation-method, .vision-paragraph, .about-paragraph, .donation-purpose {
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
 }
