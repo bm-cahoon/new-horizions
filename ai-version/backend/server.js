@@ -1,38 +1,52 @@
-const express = require('express');
-const axios = require('axios');
-const bodyParser = require('body-parser');
+import express from 'express';
+import fetch from 'node-fetch';
 
 const app = express();
-app.use(bodyParser.json());
+const PORT = process.env.PORT || 3000;
 
-const PORT = 5000;
-const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
-
-app.post('/chat', async (req, res) => {
+app.get('/api/certification', async (req, res) => {
     try {
-        const userMessage = req.body.message;
+        const userQuery = req.query.q || 'cloud computing';
+        const openAiPrompt = `Recommend a certification for someone interested in ${userQuery}.`;
 
-        const response = await axios.post(
-            'https://api.openai.com/v1/chat/completions',
-            {
-                model: 'gpt-4',
-                messages: [{ role: 'user', content: userMessage }],
+        const response = await fetch('https://api.openai.com/v1/chat/completions', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${process.env.OPENAI_API_KEY}`,
             },
-            {
-                headers: {
-                    Authorization: `Bearer ${OPENAI_API_KEY}`,
-                    'Content-Type': 'application/json',
-                },
-            }
-        );
+            body: JSON.stringify({
+                model: 'gpt-3.5-turbo',
+                messages: [{ "role": "user", "content": openAiPrompt }],
+                max_tokens: 100,
+            }),
+        });
 
-        res.json({ reply: response.data.choices[0].message.content });
+        if (!response.ok) {
+            throw new Error(`OpenAI API request failed with status ${response.status}`);
+        }
+
+        const data = await response.json();
+
+        // Enhanced response structure check with more specific error messages
+        if (data && data.choices && Array.isArray(data.choices) && data.choices.length > 0) {
+            const messageContent = data.choices[0]?.message?.content;
+            if (messageContent) {
+                res.json({ suggestions: messageContent.trim() });
+            } else {
+                console.error("API response is missing 'content' in 'message':", JSON.stringify(data, null, 2));
+                res.status(500).json({ error: 'Expected content in API response message is missing' });
+            }
+        } else {
+            console.error("Unexpected API response structure or empty choices array:", JSON.stringify(data, null, 2));
+            res.status(500).json({ error: 'Unexpected API response format or empty result' });
+        }
     } catch (error) {
-        console.error(error);
-        res.status(500).send('Error communicating with ChatGPT API');
+        console.error('Error during OpenAI API request:', error.message || error);
+        res.status(500).json({ error: 'An error occurred while processing your request' });
     }
 });
 
 app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
+    console.log(`Backend server is running on port ${PORT}`);
 });
