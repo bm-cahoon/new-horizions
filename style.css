@@ -71,6 +71,8 @@ header {
 /* Main content area styling */
 #content {
     margin-left: 5%; /* Slightly closer to the sidebar */
+    margin-bottom: 0 !important;
+    padding-bottom: 10px !important;
     width: 75%; /* Slightly increased content width */
     padding: 15px; /* Reduced padding inside the content */
     background: white;
