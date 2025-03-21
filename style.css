@@ -70,15 +70,33 @@ header {
 
 /* Main content area styling */
 #content {
-    margin-left: 5%; /* Slightly closer to the sidebar */
+    margin-left: 2%; /* Slightly adjusted margin */
     margin-bottom: 0 !important;
     padding-bottom: 10px !important;
-    width: 75%; /* Slightly increased content width */
-    padding: 15px; /* Reduced padding inside the content */
+    width: 75%;
+    padding: 15px;
     background: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
     border-radius: 10px;
     transition: transform 0.3s ease;
+
+    /* Ensure no forced height */
+    height: auto !important;
+    min-height: 0 !important;
+
+    /* Prevent flex/grid issues */
+    flex-grow: 0 !important;
+    flex-shrink: 1 !important;
+}
+
+/* Hide empty child elements inside */
+#content > div:empty {
+    display: none;
+}
+
+/* Fix parent container alignment */
+.parent-container {
+    align-items: flex-start !important;
 }
 
 #content:hover {
