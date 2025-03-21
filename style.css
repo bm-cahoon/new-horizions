@@ -1,3 +1,4 @@
+
 /* Body styling */
 body {
     font-family: 'Poppins', sans-serif;
@@ -70,6 +71,13 @@ header {
 
 /* Main content area styling */
 #content {
+    margin-left: 5%; /* Slightly closer to the sidebar */
+    width: 75%; /* Slightly increased content width */
+    padding: 15px; /* Reduced padding inside the content */
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    transition: transform 0.3s ease;
     min-height: auto !important; /* Let the content define height */
     height: auto !important;
     overflow: hidden !important; /* Prevents extra space */
@@ -77,19 +85,8 @@ header {
     flex-direction: column;
 }
 
-/* Hide all sections completely when inactive */
-.content-section {
-    display: none !important;
-    height: 0 !important;
-    opacity: 0 !important;
-    overflow: hidden;
-    transition: opacity 0.3s ease, height 0.3s ease;
-}
-
-.content-section.active {
-    display: block !important;
-    height: auto !important;
-    opacity: 1 !important;
+#content:hover {
+    transform: translateY(-10px);
 }
 
 /* Title styling */
@@ -138,17 +135,17 @@ footer {
 
 /* Hide all sections initially */
 .content-section {
-    display: none;
-    opacity: 0;
-    height: 0;
+    display: none !important;
+    height: 0 !important;
+    opacity: 0 !important;
     overflow: hidden;
     transition: opacity 0.3s ease, height 0.3s ease;
 }
 
 .content-section.active {
-    display: block;
-    opacity: 1;
-    height: auto;
+    display: block !important;
+    height: auto !important;
+    opacity: 1 !important;
 }
 
 /* Keyframes for fade-in animation */
@@ -171,7 +168,6 @@ footer {
 
 /* Maintain consistent layout when switching sections */
 #content {
-    min-height: 700px;
     overflow: auto;
     transition: all 0.3s ease;
 }
