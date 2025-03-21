@@ -70,19 +70,26 @@ header {
 
 /* Main content area styling */
 #content {
-    margin-left: 5%; /* Slightly closer to the sidebar */
-    width: 75%; /* Slightly increased content width */
-    padding: 15px; /* Reduced padding inside the content */
-    background: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-    border-radius: 10px;
-    transition: transform 0.3s ease;
-    min-height: auto; /* Allows content to dictate height */
-    overflow: hidden; /* Prevents unnecessary empty space */
+    min-height: auto !important; /* Let the content define height */
+    height: auto !important;
+    overflow: hidden !important; /* Prevents extra space */
+    display: flex;
+    flex-direction: column;
 }
 
-#content:hover {
-    transform: translateY(-10px);
+/* Hide all sections completely when inactive */
+.content-section {
+    display: none !important;
+    height: 0 !important;
+    opacity: 0 !important;
+    overflow: hidden;
+    transition: opacity 0.3s ease, height 0.3s ease;
+}
+
+.content-section.active {
+    display: block !important;
+    height: auto !important;
+    opacity: 1 !important;
 }
 
 /* Title styling */
