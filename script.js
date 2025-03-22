@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Get all the links in the sidebar
-    const links = document.querySelectorAll('#sidebar ul li a');
+    // Get all the links in the top nav
+    const links = document.querySelectorAll('#topnav ul li a');
 
     // Loop over each link and add a click event listener
     links.forEach(link => {
@@ -10,21 +10,23 @@ document.addEventListener('DOMContentLoaded', function () {
             // Hide all sections
             document.querySelectorAll('.content-section').forEach(section => {
                 section.style.display = 'none';
-            });
-
-            // Remove the 'active' class from all sections
-            document.querySelectorAll('.content-section').forEach(section => {
                 section.classList.remove('active');
             });
 
             // Show the selected section and add the 'active' class
             const target = this.getAttribute('data-target');
-            document.getElementById(target).style.display = 'block';
-            document.getElementById(target).classList.add('active');
+            const section = document.getElementById(target);
+            if (section) {
+                section.style.display = 'block';
+                section.classList.add('active');
+            }
         });
     });
 
-    // Set default active section (optional)
-    document.getElementById('vision').style.display = 'block';
-    document.getElementById('vision').classList.add('active');
+    // Set default active section
+    const defaultSection = document.getElementById('vision');
+    if (defaultSection) {
+        defaultSection.style.display = 'block';
+        defaultSection.classList.add('active');
+    }
 });

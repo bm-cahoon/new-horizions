@@ -1,30 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Horizons Tech Recovery</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Horizons Tech Recovery</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    nav#topnav {
+      background-color: #111;
+      text-align: center;
+      padding: 10px 0;
+    }
+
+    nav#topnav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    nav#topnav ul li {
+      display: inline;
+    }
+
+    nav#topnav ul li a {
+      color: white;
+      text-decoration: none;
+      padding: 10px 15px;
+      display: inline-block;
+      transition: background-color 0.3s;
+    }
+
+    nav#topnav ul li a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    /* Hide all sections by default */
+    .content-section {
+      display: none;
+    }
+
+    .content-section.active {
+      display: block;
+    }
+  </style>
 </head>
 <body>
-    <header class="site-header">
-        <h1>New Horizons Tech Recovery</h1>
-        <p>Empowering Recovery Through Technology & Education</p>
-    </header>    
+  <header class="site-header">
+    <h1>New Horizons Tech Recovery</h1>
+    <p>Empowering Recovery Through Technology & Education</p>
+  </header>
 
-    <div class="container">
-        <!-- Sidebar with clickable links -->
-        <nav id="sidebar">
-            <ul>
-                <li><a href="#" data-target="vision">Vision Statement</a></li>
-                <li><a href="#" data-target="about">About</a></li>
-                <li><a href="#" data-target="how-it-works">Submission Process</a></li>
-                <li><a href="#" data-target="application">Application</a></li> 
-                <li><a href="#" data-target="donate">How to Donate</a></li>
-                <li><a href="#" data-target="where-donations-go">Where Your Donations Go</a></li>
-                <li><a href="#" data-target="certifications">Pre-Approved Certifications</a></li>
-            </ul>
-        </nav>
+  <nav id="topnav">
+    <ul>
+      <li><a href="#" data-target="vision">Vision Statement</a></li>
+      <li><a href="#" data-target="about">About</a></li>
+      <li><a href="#" data-target="how-it-works">Submission Process</a></li>
+      <li><a href="#" data-target="application">Application</a></li>
+      <li><a href="#" data-target="donate">How to Donate</a></li>
+      <li><a href="#" data-target="where-donations-go">Where Donations Go</a></li>
+      <li><a href="#" data-target="certifications">Pre-Approved Certifications</a></li>
+    </ul>
+  </nav>
+
 
         <!-- Content area where sections will display -->
         <main id="content">
