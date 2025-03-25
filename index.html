@@ -142,47 +142,47 @@
 
   <!-- Navigation & section toggle script -->
   <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const links = document.querySelectorAll('#topnav a');
-      const sections = document.querySelectorAll('.content-section');
-      const navLinks = document.getElementById('nav-links');
-      const hamburger = document.getElementById('hamburger');
-  
-      function showSection(targetId) {
-        sections.forEach(section => {
-          section.style.display = 'none';
-          section.classList.remove('active');
-        });
-  
-        const target = document.getElementById(targetId);
-        if (target) {
-          target.style.display = 'block';
-          target.classList.add('active');
-        }
-  
-        // If on mobile, close the menu after clicking
-        if (window.innerWidth <= 768) {
-          navLinks.classList.remove('show');
-        }
+  document.addEventListener('DOMContentLoaded', function () {
+    const links = document.querySelectorAll('#topnav a');
+    const sections = document.querySelectorAll('.content-section');
+    const navLinks = document.getElementById('nav-links');
+    const hamburger = document.getElementById('hamburger');
+
+    function showSection(targetId) {
+      sections.forEach(section => {
+        section.style.display = 'none';
+        section.classList.remove('active');
+      });
+
+      const target = document.getElementById(targetId);
+      if (target) {
+        target.style.display = 'block';
+        target.classList.add('active');
       }
-  
-      links.forEach(link => {
-        link.addEventListener('click', function (e) {
-          e.preventDefault();
-          const target = this.getAttribute('data-target');
-          showSection(target);
-        });
+
+      // If on mobile, close the menu after clicking
+      if (window.innerWidth <= 768) {
+        navLinks.classList.remove('show');
+      }
+    }
+
+    links.forEach(link => {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = this.getAttribute('data-target');
+        showSection(target);
       });
-  
-      hamburger.addEventListener('click', function () {
-        navLinks.classList.toggle('show');
-      });
-  
-      // Show default section
-      showSection('vision');
     });
-  </script>
-  
+
+    hamburger.addEventListener('click', function () {
+      navLinks.classList.toggle('show');
+    });
+
+    // Show default section
+    showSection('vision');
+  });
+</script>
+
 
   <!-- ✅ Chatbase Script (not inside any other <script>) -->
   <script>
