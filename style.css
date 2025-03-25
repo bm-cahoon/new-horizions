@@ -552,8 +552,15 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Hamburger Button (always shown) */
-#hamburger {
+/* Navigation wrapper */
+nav#topnav {
+    background-color: #111;
+    text-align: center;
+    padding: 10px 0;
+  }
+  
+  /* Hamburger button (always visible) */
+  #hamburger {
     display: block;
     background: none;
     border: none;
@@ -564,49 +571,44 @@ html {
     margin: 0 auto;
   }
   
-  /* Nav wrapper styles */
-  nav#topnav {
-    background-color: #111;
-    padding: 10px 0;
-    text-align: center;
-  }
-  
-  /* Nav list (hidden until toggled) */
+  /* Nav links container (hidden by default) */
   nav#topnav ul {
     display: none;
     flex-direction: column;
     background-color: #111;
     list-style: none;
     padding: 0;
-    margin: 0;
-    width: 100%;
+    margin: 10px auto 0 auto;
+    width: fit-content;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   }
   
-  /* Show menu when hamburger toggled */
+  /* Show nav when toggled */
   nav#topnav ul.show {
     display: flex;
   }
   
-  /* Nav items */
+  /* Nav item styles */
   nav#topnav ul li {
-    display: block;
-    width: 100%;
     text-align: center;
+    border-top: 1px solid #222;
+  }
+  
+  nav#topnav ul li:first-child {
+    border-top: none;
   }
   
   /* Nav links */
   nav#topnav ul li a {
     display: block;
-    width: 100%;
-    padding: 12px 0;
+    padding: 12px 20px;
     color: white;
     text-decoration: none;
     transition: background-color 0.3s ease;
   }
   
-  /* Hover effect */
   nav#topnav ul li a:hover {
-    background-color: #ddd;
-    color: black;
+    background-color: #333;
   }
   
