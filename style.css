@@ -552,101 +552,61 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Hamburger Button */
+/* Hamburger Button (always shown) */
 #hamburger {
-    display: none;
+    display: block;
     background: none;
     border: none;
     font-size: 28px;
     color: white;
     padding: 10px 20px;
     cursor: pointer;
+    margin: 0 auto;
   }
   
-  /* Mobile Styles */
-  @media (max-width: 768px) {
-    #hamburger {
-      display: block;
-      margin: 0 auto;
-    }
-  
-    nav#topnav ul {
-      display: none;
-      flex-direction: column;
-      background-color: #111;
-      padding: 0;
-      margin: 0;
-      width: 100%;
-    }
-  
-    nav#topnav ul.show {
-      display: flex;
-    }
-  
-    nav#topnav ul li {
-      display: block;
-      width: 100%;
-      text-align: center;
-    }
-  
-    nav#topnav ul li a {
-      display: block;
-      width: 100%;
-      padding: 12px 0;
-      color: white;
-      text-decoration: none;
-    }
+  /* Nav wrapper styles */
+  nav#topnav {
+    background-color: #111;
+    padding: 10px 0;
+    text-align: center;
   }
   
-  /* Desktop Styles */
-  @media (min-width: 769px) {
-    nav#topnav ul {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-  
-    #hamburger {
-      display: none;
-    }
-  }
-
-  /* Desktop nav styles */
-@media (min-width: 769px) {
-    nav#topnav {
-      background-color: #111;
-      padding: 10px 0;
-      text-align: center;
-    }
-  
-    nav#topnav ul {
-      /* display: flex; */
-      list-style: none;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin: 0;
-      padding: 0;
-    }
-  
-    nav#topnav ul li {
-      display: inline;
-    }
-  
-    nav#topnav ul li a {
-      color: white;
-      text-decoration: none;
-      padding: 10px 15px;
-      display: inline-block;
-      transition: background-color 0.3s ease;
-    }
-  
-    nav#topnav ul li a:hover {
-      background-color: #ddd;
-      color: black;
-    }
+  /* Nav list (hidden until toggled) */
+  nav#topnav ul {
+    display: none;
+    flex-direction: column;
+    background-color: #111;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
   }
   
+  /* Show menu when hamburger toggled */
+  nav#topnav ul.show {
+    display: flex;
+  }
   
+  /* Nav items */
+  nav#topnav ul li {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  
+  /* Nav links */
+  nav#topnav ul li a {
+    display: block;
+    width: 100%;
+    padding: 12px 0;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Hover effect */
+  nav#topnav ul li a:hover {
+    background-color: #ddd;
+    color: black;
+  }
   
