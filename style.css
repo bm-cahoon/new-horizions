@@ -552,6 +552,7 @@ html {
     scroll-behavior: smooth;
 }
 
+/* Hamburger Button */
 #hamburger {
     display: none;
     background: none;
@@ -596,4 +597,19 @@ html {
       text-decoration: none;
     }
   }
+  
+  /* Desktop Styles */
+  @media (min-width: 769px) {
+    nav#topnav ul {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+  
+    #hamburger {
+      display: none;
+    }
+  }
+  
   
