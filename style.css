@@ -621,7 +621,7 @@ html {
     }
   
     nav#topnav ul {
-      display: flex;
+      /* display: flex; */
       list-style: none;
       justify-content: center;
       flex-wrap: wrap;
