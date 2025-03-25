@@ -55,17 +55,18 @@
   </header>
 
   <nav id="topnav">
-    <ul>
+    <button id="hamburger" aria-label="Toggle Navigation">&#9776;</button>
+    <ul id="nav-links">
       <li><a href="#" data-target="vision">Vision Statement</a></li>
       <li><a href="#" data-target="about">About</a></li>
       <li><a href="#" data-target="how-it-works">How it Works</a></li>
       <li><a href="#" data-target="application">Application</a></li>
       <li><a href="#" data-target="donate">How to Donate</a></li>
       <li><a href="#" data-target="where-donations-go">Where Donations Go</a></li>
-      <li><a href="#" data-target="certifications">Popular Certifications</a></li>\
+      <li><a href="#" data-target="certifications">Popular Certifications</a></li>
       <li><a href="#" data-target="founder">Our Founder</a></li>
     </ul>
-  </nav>
+  </nav>  
 
   <main id="content">
 <section id="vision" class="content-section content-box">
@@ -212,14 +213,11 @@
     });
   </script>
 
-<div style="text-align: center; font-size: 1rem; margin: 20px auto; max-width: 600px; color: #333;">
-  💬 <strong>Need Help Choosing a Certification?</strong><br>
-  Select the Chat Bubble on the bottom right-hand corner and ask our assistant:<br>
-  <em>“What cert should I take for cybersecurity?”</em><br>
-  <em>“I'm new to tech — where do I start?”</em><br>
-  This AI helper is powered by ChatGPT and trained to guide you!
-  🔒 Please don’t share personal or sensitive information. This chatbot is for general guidance only.
-</div>
+<script>
+  document.getElementById('hamburger').addEventListener('click', function () {
+    document.getElementById('nav-links').classList.toggle('show');
+  });
+</script>
 
   <!-- ✅ Chatbase Script (not inside any other <script>) -->
   <script>

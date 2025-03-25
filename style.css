@@ -551,3 +551,36 @@ footer {
 html {
     scroll-behavior: smooth;
 }
+
+#hamburger {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  @media (max-width: 768px) {
+    #hamburger {
+      display: block;
+    }
+  
+    nav#topnav ul {
+      flex-direction: column;
+      display: none;
+      background-color: #111;
+      padding: 0;
+    }
+  
+    nav#topnav ul.show {
+      display: flex;
+    }
+  
+    nav#topnav ul li {
+      text-align: center;
+      width: 100%;
+    }
+  }
+  
