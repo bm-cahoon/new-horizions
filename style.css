@@ -560,39 +560,32 @@ html {
     color: white;
     padding: 10px 20px;
     cursor: pointer;
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    z-index: 1001;
   }
   
+  /* Mobile Styles */
   @media (max-width: 768px) {
-    nav#topnav {
-      position: relative;
+    #hamburger {
+      display: block;
+      margin: 0 auto;
     }
   
     nav#topnav ul {
-      display: none; /* hidden by default on mobile */
+      display: none;
       flex-direction: column;
-      align-items: center;
       background-color: #111;
-      padding: 20px 0;
+      padding: 0;
+      margin: 0;
       width: 100%;
-      position: absolute;
-      top: 60px;
-      left: 0;
-      z-index: 1000;
     }
   
     nav#topnav ul.show {
-      display: flex; /* only shown when hamburger is clicked */
+      display: flex;
     }
   
     nav#topnav ul li {
       display: block;
       width: 100%;
       text-align: center;
-      margin: 0;
     }
   
     nav#topnav ul li a {
@@ -601,10 +594,6 @@ html {
       padding: 12px 0;
       color: white;
       text-decoration: none;
-    }
-  
-    #hamburger {
-      display: block;
     }
   }
   
