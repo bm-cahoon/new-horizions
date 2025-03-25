@@ -555,60 +555,74 @@ html {
 /* Navigation wrapper */
 nav#topnav {
     background-color: #111;
-    text-align: center;
-    padding: 10px 0;
+    padding: 10px 20px;
+    position: relative;
   }
   
-  /* Hamburger button (always visible) */
+  /* Hamburger - visible on mobile only */
   #hamburger {
-    display: block;
+    display: none;
     background: none;
     border: none;
     font-size: 28px;
     color: white;
-    padding: 10px 20px;
     cursor: pointer;
-    margin: 0 auto;
-  }
-  
-  /* Nav links container (hidden by default) */
-  nav#topnav ul {
-    display: none;
-    flex-direction: column;
-    background-color: #111;
-    list-style: none;
-    padding: 0;
-    margin: 10px auto 0 auto;
-    width: fit-content;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  }
-  
-  /* Show nav when toggled */
-  nav#topnav ul.show {
-    display: flex;
-  }
-  
-  /* Nav item styles */
-  nav#topnav ul li {
-    text-align: center;
-    border-top: 1px solid #222;
-  }
-  
-  nav#topnav ul li:first-child {
-    border-top: none;
   }
   
   /* Nav links */
+  nav#topnav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 20px;
+  }
+  
   nav#topnav ul li a {
-    display: block;
-    padding: 12px 20px;
     color: white;
     text-decoration: none;
+    padding: 10px 15px;
+    display: inline-block;
     transition: background-color 0.3s ease;
   }
   
   nav#topnav ul li a:hover {
     background-color: #333;
+    border-radius: 5px;
+  }
+  
+  /* Mobile styles */
+  @media (max-width: 768px) {
+    #hamburger {
+      display: block;
+      margin-left: auto;
+    }
+  
+    nav#topnav ul {
+      display: none;
+      flex-direction: column;
+      background-color: #111;
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      border-radius: 8px;
+      width: 200px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      z-index: 10;
+    }
+  
+    nav#topnav ul.show {
+      display: flex;
+    }
+  
+    nav#topnav ul li {
+      border-top: 1px solid #222;
+      text-align: right;
+    }
+  
+    nav#topnav ul li:first-child {
+      border-top: none;
+    }
   }
   
