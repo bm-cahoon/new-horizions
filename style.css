@@ -495,8 +495,14 @@ footer {
     .logo-banner {
       object-fit: contain;
       max-height: 425px;
-      width: 90%;
+      width: 100%;
     }
+    .banner-wrapper {
+        border: 4px solid rgba(0, 0, 0, 0.6); /* semi-transparent black border */
+        max-width: 100%;
+        margin: 0 auto;
+        border-radius: 5px; /* optional for slightly rounded corners */
+      }
   }
   
 
