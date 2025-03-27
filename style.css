@@ -477,8 +477,8 @@ footer {
 .site-header {
     text-align: center;
     padding: 50px;
-    background: linear-gradient(135deg, #f5f5f5, #dcdcdc); /* Softer, neutral gradient */
-    color: #222;
+    background: linear-gradient(135deg, #007BFF, #00BFFF); /* Gradient background */
+    color: white;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     position: relative;
@@ -488,10 +488,10 @@ footer {
 /* Title Styling */
 .site-header h1 {
     font-size: 3.5rem;
-    color: #222;
+    color: white;
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
-    text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Subtle text shadow */
     letter-spacing: 2px;
     margin: 0;
     position: relative;
@@ -502,40 +502,12 @@ footer {
 .site-header p {
     font-size: 1.5rem;
     font-style: italic;
-    color: #555;
+    color: #f0f2f5;
     margin-top: 10px;
     letter-spacing: 1px;
     z-index: 2;
     position: relative;
 }
-
-/* Background Decoration */
-.site-header:before {
-    content: '';
-    position: absolute;
-    top: -50px;
-    right: -50px;
-    background: rgba(0, 0, 0, 0.05); /* Soft black tint */
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    z-index: 1;
-    animation: spin 10s linear infinite;
-}
-
-.site-header:after {
-    content: '';
-    position: absolute;
-    bottom: -50px;
-    left: -50px;
-    background: rgba(0, 0, 0, 0.05); /* Soft black tint */
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    z-index: 1;
-    animation: spin-reverse 8s linear infinite;
-}
-
 
 /* Spin Animations */
 @keyframes spin {
