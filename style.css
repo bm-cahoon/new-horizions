@@ -494,8 +494,8 @@ footer {
   @media (min-width: 768px) {
     .logo-banner {
       object-fit: contain;
-      max-width: 2000px;
-      max-height: 300px;
+      height: auto;
+      width: auto;
     }
   }
   
