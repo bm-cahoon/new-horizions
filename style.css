@@ -489,9 +489,8 @@ footer {
   /* Logo banner image */
   .logo-banner {
     width: 100%;
-    height: auto;               /* Maintain full image proportions */
-    max-height: 300px;          /* You can adjust this for more or less height */
-    object-fit: contain;        /* Show full image without cropping */
+    max-height: 150px;
+    object-fit: cover;
     display: block;
   }
 
