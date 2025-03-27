@@ -494,8 +494,8 @@ footer {
   @media (min-width: 768px) {
     .logo-banner {
       object-fit: cover;
-      max-height: 475px;
-      width: 80%;
+      max-height: 425px;
+      width: 90%;
     }
   }
   
