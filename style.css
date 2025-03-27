@@ -495,7 +495,7 @@ footer {
     .logo-banner {
       object-fit: contain;
       height: auto;
-      width: auto;
+      width: 100%;
     }
   }
   
