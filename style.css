@@ -473,22 +473,26 @@ footer {
     }
 }
 
-/* Clean Logo Header Styling */
 .site-header {
-    background-color: #ffffff;
-    padding: 10px 0;
-    text-align: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.logo-banner {
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
     width: 100%;
-    max-width: 700px;
-    height: auto;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Logo banner image */
+  .logo-banner {
+    width: 100%;
+    max-height: 150px;
+    object-fit: cover;
     display: block;
-    margin: 0 auto;
-    object-fit: contain;
-}
+  }
 
 /* Spin Animations */
 @keyframes spin {
