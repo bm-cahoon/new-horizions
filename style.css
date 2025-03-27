@@ -493,7 +493,7 @@ footer {
   /* Desktop optimization */
   @media (min-width: 768px) {
     .logo-banner {
-      object-fit: cover;
+      object-fit: contain;
       max-height: 425px;
       width: 90%;
     }
